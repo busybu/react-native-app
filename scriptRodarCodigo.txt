@@ -1,3 +1,5 @@
+PARA REACT:
+
 (para startar o app)
 npx expo start
 
@@ -16,9 +18,38 @@ yarn
 yarn add expo
 npx expo install react-native-web@~0.18.19 react-dom@18.2.0 @expo/webpack-config@^18.0.1
 
-2 - (para usar o react navigator)
+2 - (para usar um firebase)
+
+npm install firebase
+*pegar o codigo dentro do firebase criado para conectar a aplicacao
+
+3 - (para usar o react navigator)
 npm install @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 npm install @react-navigation/stack
 npx expo install react-native-gesture-handler
 
+
+
+PARA NODE:
+
+1 - (criar api)
+npm init
+
+1 - (pegar repositorio git)
+npm install express // instala node_modules
+
+2 - (startar api) 
+    - colocar no package.json
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start": "node app.js"
+        },
+    -npm start
+
+3 - (hot reload para a api)
+    -npm install nodemon // na pasta do projeto
+
+4 - (para rodar para desenvolvimento)
+    - "dev": "nodemon app.js" // dentro do scripts
+    - precisa rodar dentro do dev
