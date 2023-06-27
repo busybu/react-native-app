@@ -1,5 +1,6 @@
 PARA REACT:
 
+extensao : React Developer Tools
 (para startar o app)
 npx expo start
 
