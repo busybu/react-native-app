@@ -28,6 +28,10 @@ npm install @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 npm install @react-navigation/stack
 npx expo install react-native-gesture-handler
+*mais algumas bibliotecas pra serem instaladas
+
+4 - (pra usar node)
+npm install axios  
 
 
 
@@ -53,3 +57,6 @@ npm install express // instala node_modules
 4 - (para rodar para desenvolvimento)
     - "dev": "nodemon app.js" // dentro do scripts
     - precisa rodar dentro do dev
+    
+5 - (instalar cors)
+    - npm install cors

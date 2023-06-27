@@ -18,7 +18,7 @@ export default function Login() {
 
   useEffect(() => {
     if(!!auth.currentUser)
-      navigation.navigate('Home')
+      navigation.navigate('Listagem')
     //trocar de tela, caso exista um usuario
   }, [auth.currentUser])
 
@@ -41,7 +41,7 @@ export default function Login() {
 
   const signIn = () => {
     signInWithEmailAndPassword(auth, email, password).then((userCredentials) => {
-      navigation.navigate('Home')
+      navigation.navigate('Listagem')
     }).catch((err) => {
       console.error(err)
     })
