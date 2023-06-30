@@ -1,12 +1,13 @@
-import { Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native'
 import home from '../styles/home';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Listagem() {
 	const [transactions, setTransactions] = useState([])
-
+	const navigation = useNavigation();
+	
 	useEffect(() => {
 		const getTransactions = async () => {
 			try {
@@ -23,6 +24,10 @@ export default function Listagem() {
 		getTransactions()
 	}, [])
 
+	const cadastro = () =>
+  {
+    navigation.navigate('Cadastro')
+  }
 
 	return (
 
@@ -44,7 +49,7 @@ export default function Listagem() {
 					</View>
 				)
 			}) }
-
+			<Button onPress={(cadastro)}></Button>
 		</View>
 
 	);

@@ -12,6 +12,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 export default function Login() {
   const auth = getAuth(app)
   const navigation = useNavigation()
+  
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 

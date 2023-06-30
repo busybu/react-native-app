@@ -1,13 +1,39 @@
 const express = require('express')
-const app = express();
 const cors = require('cors')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
+const {Transaction}  = require('./schemas/Transactions')
+const app = express();
 app.use(cors())
-app.get('/', (req, res) => {
-    res.send("Olá!")
+app.use(bodyParser.json());
+
+app.get('/', async (req, res) => {
+    
+    const resp = await Transaction.find();
+    res.json(resp)
+})
+
+app.post('/cadastro', async (req,res) => {
+    try {
+        const response = {
+            "data" : req.body.date,
+            "referencia": req.body.reference,
+            "valor": req.body.value
+        }
+        await Transaction.create(response)
+        res.status(200).json(true);
+    }catch (err) {
+        console.log(err)
+		res.status(500).json({ message: err });
+
+	}
+
 })
 
 app.get('/transactions', (req, res) => {
+
+    
     const arrTransactions = [
         {
             amount: 2500,
@@ -57,6 +83,13 @@ app.get('/transactions', (req, res) => {
 })
 
 const port = 3000
-app.listen(port, () => {
-    console.log("rodou!")
-})
+
+const serverInit = async () => {
+    await mongoose.connect("mongodb+srv://gabriellefialkoski:Gabrielle123@cluster0.tbwxpsl.mongodb.net/?retryWrites=true&w=majority")
+
+    app.listen(port, async () => {
+        console.log("Tarodando")
+    })
+}
+
+serverInit()
